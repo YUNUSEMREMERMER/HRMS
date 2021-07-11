@@ -17,20 +17,19 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "skills")
-public class Skill {
+@Table(name = "cover_letter")
+public class CoverLetter {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
 	private int id;
 	
-	@Column(name = "technology_name")
-	private String techName;
+	@Column(name = "description")
+	private String description;
 	
-	@ManyToOne
+	@ManyToOne()
     @JoinColumn(name = "candidates_id")
     private Candidate candidates;
 
-	
 }
