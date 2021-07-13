@@ -11,5 +11,7 @@ public interface ExperienceDao extends JpaRepository<Experience,Integer>{
 	Experience getById(int id);
 	
 	List<Experience> getByCandidates_Id(int candidatesId);
+	
+	List<Experience> findByOrderByEndDateDesc();
 
 }

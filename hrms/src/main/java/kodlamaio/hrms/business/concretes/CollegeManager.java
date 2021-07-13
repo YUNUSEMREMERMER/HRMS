@@ -40,9 +40,16 @@ public class CollegeManager implements CollegeService{
 	}
 
 	@Override
-	public DataResult<List<College>> getByCandidates_Id(int candidateId) {
-		return new SuccessDataResult<List<College>>(this.collegeDao.getByCandidates_Id(candidateId));
+	public DataResult<List<College>> getByCandidate_Id(int candidateId) {
+		return new SuccessDataResult<List<College>>(this.collegeDao.getByCandidate_Id(candidateId));
 	}
+	
+	
+	@Override
+	public DataResult<List<College>> findByOrderByGraduatedDate() {
+		return new SuccessDataResult<List<College>>(this.collegeDao.getByOrderByGraduatedDate());
+	}
+	
 
 	
 

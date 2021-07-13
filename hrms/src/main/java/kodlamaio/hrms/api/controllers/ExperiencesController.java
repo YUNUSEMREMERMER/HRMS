@@ -39,5 +39,10 @@ public class ExperiencesController {
 	public DataResult<List<Experience>> getByCandidates_Id(int candidatesId){
 		return this.experienceService.getByCandidates_Id(candidatesId);
 	}
+	
+	@GetMapping("/findByOrderByEndDateDesc")
+	public DataResult<List<Experience>> findByOrderByEndDateDesc(){
+		return this.experienceService.findByOrderByEndDateDesc();
+	}
 
 }

@@ -41,6 +41,10 @@ public class College {
 	
 	@ManyToOne
     @JoinColumn(name = "candidates_id")
-    private Candidate candidates;
+    private Candidate candidate;
+	
+	
+	
+	
 
 }

@@ -45,4 +45,10 @@ private ExperienceDao experienceDao;
 		return new SuccessDataResult<List<Experience>>(this.experienceDao.getByCandidates_Id(candidateId));
 	}
 
+	@Override
+	public DataResult<List<Experience>> findByOrderByEndDateDesc() {
+		return new SuccessDataResult<List<Experience>>(this.experienceDao.findByOrderByEndDateDesc());
+
+	}
+
 }

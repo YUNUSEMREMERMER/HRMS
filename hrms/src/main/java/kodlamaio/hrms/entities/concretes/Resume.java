@@ -47,9 +47,10 @@ public class Resume {
 	@Column(name= "cover_letter")
 	private String coverLetter;
 	
+	/*
 	@JsonIgnore
 	@OneToMany(mappedBy = "resume")
-    private List<College> college;
+    private List<College> college;  
 	
 	@JsonIgnore
 	@OneToMany(mappedBy = "resume")
@@ -66,5 +67,6 @@ public class Resume {
 	@JsonIgnore
 	@OneToMany(mappedBy = "resume")
     private List<Skill> skills;
+    */
 
 }

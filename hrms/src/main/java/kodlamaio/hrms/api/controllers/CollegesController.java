@@ -36,8 +36,13 @@ public class CollegesController {
 	}
 	
 	@GetMapping("/getByCandidates_Id")
-	public DataResult<List<College>> getByCandidates_Id(int candidatesId){
-		return this.collegeService.getByCandidates_Id(candidatesId);
+	public DataResult<List<College>> getByCandidate_Id(int candidateId){
+		return this.collegeService.getByCandidate_Id(candidateId);
+	}
+	
+	@GetMapping("/getByOrderGraduatedDate")
+	public DataResult<List<College>> findByOrderByGraduatedDate(){
+		return this.collegeService.findByOrderByGraduatedDate();
 	}
 
 }

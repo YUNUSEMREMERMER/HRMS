@@ -14,6 +14,8 @@ public interface CollegeService {
 	
 	DataResult<College> getById(int id);
 	
-	DataResult<List<College>> getByCandidates_Id(int candidateId);
+	DataResult<List<College>> getByCandidate_Id(int candidateId);
+	
+	DataResult<List<College>> findByOrderByGraduatedDate();
 
 }
