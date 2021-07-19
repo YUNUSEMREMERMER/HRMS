@@ -53,7 +53,7 @@ public class ResumeManager implements ResumeService{
 	@Override
 	public DataResult<ResumeDto> getByCandidateId(int candidateId) {
 		ResumeDto resumeDto = new ResumeDto();
-		//resumeDto.setCandidate(candidateService.getById(candidateId).getData());
+		resumeDto.setCandidate(candidateService.getById(candidateId).getData());
 		resumeDto.setColleges(collegeService.getByCandidate_Id(candidateId).getData());
 		resumeDto.setExperiences(experienceService.getByCandidates_Id(candidateId).getData());
 		resumeDto.setImage(imageService.getByUserId(candidateId).getData());
