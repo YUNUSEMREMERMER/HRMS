@@ -1,6 +1,5 @@
 package kodlamaio.hrms.api.controllers;
 
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,6 +12,7 @@ import kodlamaio.hrms.business.abstacts.ResumeService;
 import kodlamaio.hrms.core.utilities.results.DataResult;
 import kodlamaio.hrms.core.utilities.results.Result;
 import kodlamaio.hrms.entities.concretes.Resume;
+import kodlamaio.hrms.entities.dtos.ResumeDto;
 
 @RestController
 @RequestMapping(value= "api/resumes")
@@ -26,30 +26,20 @@ public class ResumesController {
 		this.resumeService = resumeService;
 	}
 	
-	@GetMapping("/getAllSortedGradutionYear")
-	public DataResult<List<Resume>> getAllSortedGradutionYear() {
-		
-		return this.resumeService.getAllSortedGradutionYear();
-	}
 	
-	@GetMapping("/getAllSortedExperinceYear")
-	public DataResult<List<Resume>> getAllSortedExperinceYear() {
-		
-		return this.resumeService.getAllSortedExperinceYear();
-	}
-	
-	@PostMapping("/getByResumeId")
-	public DataResult<Resume> getByCvId(int resumeId) {
-		
-		return this.resumeService.getById(resumeId);
-		
-	}
-	
-	@PostMapping("/ResumeAdd")
+	@PostMapping("/add")
 	public Result add(@RequestBody Resume resume) {
 		
 		return this.resumeService.add(resume);
-		
 	}
+	
+	@GetMapping("/getbycandidateıd")
+	public DataResult<ResumeDto> getByCandidateId(int candidateId) {
+		
+		return this.resumeService.getByCandidateId(candidateId);
+	}
+	
+	
+	
 	
 }

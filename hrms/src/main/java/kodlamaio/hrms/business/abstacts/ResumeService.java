@@ -1,21 +1,17 @@
 package kodlamaio.hrms.business.abstacts;
 
-import java.util.List;
+
 
 import kodlamaio.hrms.core.utilities.results.DataResult;
 import kodlamaio.hrms.core.utilities.results.Result;
 import kodlamaio.hrms.entities.concretes.Resume;
+import kodlamaio.hrms.entities.dtos.ResumeDto;
 
 public interface ResumeService {
+		
+    DataResult<ResumeDto> getByCandidateId(int candidateId);
 	
-	public Result add(Resume  resume);
+	Result add(Resume resume);
 	
-	public DataResult<List<Resume>> getAll();
-	
-	public DataResult<List<Resume>> getAllSortedGradutionYear();
-	
-	public DataResult<List<Resume>> getAllSortedExperinceYear();
-	
-	public DataResult<Resume> getById(int userId);
 
 }

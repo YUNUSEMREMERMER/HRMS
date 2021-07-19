@@ -34,5 +34,10 @@ public class CandidatesController {
 	public Result add(@RequestBody Candidate candidate){
 		return candidateService.add(candidate);
 	}
+	
+	@GetMapping("/getbyid")
+	public DataResult<Candidate> getById( int id){
+		return candidateService.getById(id);
+	}
 
 }

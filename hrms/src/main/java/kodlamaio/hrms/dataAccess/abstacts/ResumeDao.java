@@ -6,10 +6,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import kodlamaio.hrms.entities.concretes.Resume;
 
-public interface ResumeDao extends JpaRepository<Resume, Integer> {
+public interface ResumeDao extends  JpaRepository<Resume, Integer>{
 	
-	List<Resume> findAllByCandidates_Id(int candidatesId); 
-	
-	Resume getById(int resumeId);
-	
+	List<Resume> getByCandidate_Id(int candidateId);
+
 }

@@ -40,4 +40,9 @@ public class UsersController {
 		return userService.delete(user);
 	}
 	
+	@GetMapping("/getbyid")
+	public DataResult<User> getById(int id){
+		return userService.getById(id);
+	}
+	
 }

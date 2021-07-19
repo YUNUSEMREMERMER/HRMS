@@ -29,11 +29,18 @@ public class CandidateManager implements CandidateService{
 		this.mernisCheckService = mernisCheckService;
 		this.emailCheckService = emailCheckService;
 	}
-
+ 
 	@Override
 	public DataResult<List<Candidate>> getAll() {
 		
 		return new SuccessDataResult<List<Candidate>>(candidateDao.findAll(),"Data Listelendi"); 
+	}
+	
+	@Override
+	public DataResult<Candidate> getById(int id) {
+		
+        return new SuccessDataResult<Candidate>(candidateDao.getById(id));
+        
 	}
 
 	@Override
@@ -85,6 +92,8 @@ public class CandidateManager implements CandidateService{
 		}
 		return false;
 	}
+
+	
 	
 	
 
